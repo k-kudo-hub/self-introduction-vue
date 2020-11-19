@@ -9,12 +9,20 @@
     <div class="head-menu">
       <ul class="menu-bar">
         <li class="menu-item">
-          <router-link to="/" active-class="link-active" exact>Home</router-link>
+          <router-link to="/" active-class="link-active" exact class="menu-link">Home</router-link>
         </li>
-        <li class="menu-item">About</li>
-        <li class="menu-item">Skill</li>
-        <li class="menu-item">Portfolio</li>
-        <li class="menu-item">Contact</li>
+        <li class="menu-item">
+          <router-link to="/about" active-class="link-active" exact class="menu-link">About</router-link>
+        </li>
+        <li class="menu-item">
+          <router-link to="/skill" active-class="link-active" exact class="menu-link">Skill</router-link>
+        </li>
+        <li class="menu-item">
+          <router-link to="/portfolio" active-class="link-active" exact class="menu-link">Portfolio</router-link>
+        </li>
+        <li class="menu-item">
+          <router-link to="/contact" active-class="link-active" exact class="menu-link">Contact</router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -45,6 +53,10 @@ export default {
   padding: 30px 10px;
 }
 
+.link-active {
+  border-bottom: 2px solid #ffff;
+}
+
 .menu-bar {
   display: flex;
   justify-content: space-around;
@@ -56,8 +68,12 @@ export default {
 
 .menu-item {
   padding: 15px 0;
-  color: #ffffff;
   font-weight: bold;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 </style>
