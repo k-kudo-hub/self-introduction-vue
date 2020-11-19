@@ -2,6 +2,7 @@
   <div id="app">
     <TitleHeader>
     </TitleHeader>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -21,6 +22,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
