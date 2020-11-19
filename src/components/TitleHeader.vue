@@ -8,7 +8,9 @@
     </div>
     <div class="head-menu">
       <ul class="menu-bar">
-        <li class="menu-item">Home</li>
+        <li class="menu-item">
+          <router-link to="/" active-class="link-active" exact>Home</router-link>
+        </li>
         <li class="menu-item">About</li>
         <li class="menu-item">Skill</li>
         <li class="menu-item">Portfolio</li>
