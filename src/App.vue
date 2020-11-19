@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    
+    <TitleHeader>
+    </TitleHeader>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import 'normalize.css'
+import TitleHeader from './components/TitleHeader.vue'
 
-// export default {
-//   name: 'App',
-//   components: {
-//     HelloWorld
-//   }
-// }
+export default {
+  data(){
+    return {
+      
+    }
+  },
+  components: {
+    TitleHeader,
+  }
+}
 </script>
 
 <style>
