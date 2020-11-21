@@ -3,12 +3,15 @@
     <TitleHeader>
     </TitleHeader>
     <router-view></router-view>
+    <Footer>
+    </Footer>
   </div>
 </template>
 
 <script>
 import 'normalize.css'
 import TitleHeader from './components/TitleHeader.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   data(){
@@ -18,10 +21,11 @@ export default {
   },
   components: {
     TitleHeader,
+    Footer,
   }
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>
