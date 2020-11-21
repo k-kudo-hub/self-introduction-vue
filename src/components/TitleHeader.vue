@@ -63,17 +63,21 @@ export default {
   list-style: none;
   padding: 0 20px;
   margin: 0 auto;
-  background-color: #f05545
+  background-color: #f05545;
 }
 
 .menu-item {
-  padding: 15px 0;
+  padding: 15px 30px;
   font-weight: bold;
 }
 
 .menu-link {
   text-decoration: none;
   color: #ffffff;
+}
+
+.menu-link:hover {
+  border-bottom: 2px solid #ffff;
 }
 
 </style>
