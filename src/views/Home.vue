@@ -13,13 +13,13 @@
     <div class="middle-home home-block">
       <div class="middle-content">
         <h2>"Confront inconvenience"</h2>
-        <p>...That is his theme</p>
+        <p>...that is his theme</p>
       </div>
     </div>
     <div class="lower-home home-block">
       <div class="lower-home-mask">
         <div :class="{fadeIn: visible}" class="lower-content">
-          <h2 v-show="visible">For someone</h2>
+          <h2 v-show="visible">For someone.</h2>
           <p v-show="visible">There seems to be a work he made</p>
           <p v-show="visible">Let's go see his work together</p>
           <button @click="toPortfolio" v-show="visible" class="button to-portfolio">See Portfolio → </button>
