@@ -28,4 +28,14 @@ export default {
 
 <style>
 
+.button {
+  margin-top: 20px;
+  padding: 1.5vh 2vw;
+  border-radius: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
 </style>
