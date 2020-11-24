@@ -15,9 +15,6 @@
           <router-link to="/about" active-class="link-active" exact class="menu-link">About</router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/skill" active-class="link-active" exact class="menu-link">Skill</router-link>
-        </li>
-        <li class="menu-item">
           <router-link to="/portfolio" active-class="link-active" exact class="menu-link">Portfolio</router-link>
         </li>
         <li class="menu-item">
