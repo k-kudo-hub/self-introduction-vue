@@ -19,17 +19,46 @@
         <pre>2020   Start programming...</pre>
       </div>
     </div>
-    <div class="lower-about about-block">
+    <div class="lower-about">
       <div class="lower-text-area">
-        <h2 class="about-title">Skill</h2>
+        <h2 class="about-title">Programming Skill</h2>
+        <br>
+        <h3>Front-end</h3>
+        <div class="side-pic">
+          <img src="../assets/html5.svg" class="lang">
+          <img src="../assets/css-5.svg" class="lang">
+          <img src="../assets/javascript-4.svg" class="lang">
+          <img src="../assets/logo.png" class="lang">
+        </div>
+        <h3>Backｰend・Framework</h3>
+        <div class="side-pic">
+          <img src="../assets/ruby.svg" class="lang">
+          <img src="../assets/rails-1.svg" class="lang">
+          <img src="../assets/python-5.svg" class="lang">
+          <img src="../assets/django.svg" class="lang">
+        </div>
+        <h3>infrastructure・Database</h3>
+        <div class="side-pic">
+          <img src="../assets/docker.svg" class="lang">
+          <img src="../assets/circle-logo-stacked-black.png" class="lang">
+          <img src="../assets/mysql.svg" class="lang">
+          <img src="../assets/mariadb.svg" class="lang">
+        </div>
+        <h3>Other tools</h3>
+        <div class="side-pic">
+          <img src="../assets/github-icon-1.svg" class="lang">
+          <img src="../assets/slack-2.svg" class="lang">
+          <img src="../assets/trello.svg" class="lang">
+        </div>
       </div>
     </div>
     <div class="bottom-about">
-      <h2 class="about-title">Gallery</h2>
+      <h2 class="about-title">Photo Gallery</h2>
+      <br>
       <carousel
-        autoplay="true" 
-        autoplayTimeout=4000
-        autoplayHoverPause="true"  
+        :autoplay="carousel.bool"
+        :autoplayTimeout="carousel.number"
+        :autoplayHoverPause="carousel.bool"
       >
         <slide>
           <img src='../assets/ski.jpg' class="slide-pic">
@@ -57,7 +86,10 @@ import { Carousel, Slide } from 'vue-carousel';
 export default {
   data(){
     return {
-
+      carousel: {
+        bool: true,
+        number: 4000
+      },
     }
   },
   components: {
@@ -100,6 +132,12 @@ export default {
   margin: 0 auto;
 }
 
+.lower-about {
+  width: cover;
+  height: 700px;
+  margin: 0 auto;
+}
+
 .lower-text-area,
 .middle-text-area {
   margin: 0 auto;
@@ -108,9 +146,24 @@ export default {
   padding-top :20px;
 }
 
+.lower-text-area > h3 {
+  margin: 0 0 20px 0;
+}
+
 .over-pic {
   background-color: #ffff;
   width: fit-content;
+}
+
+.lang {
+  width: 80px;
+  height: 70px;
+  margin-right: 30px;
+}
+
+.side-pic {
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .slide-pic {
