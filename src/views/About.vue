@@ -163,7 +163,7 @@ export default {
 
 .side-pic {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .slide-pic {
