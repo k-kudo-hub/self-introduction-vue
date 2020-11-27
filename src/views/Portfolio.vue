@@ -40,7 +40,7 @@ export default {
           title: "Self-introduce-vue",
           sub_title: "- Welcome to my world. -",
           background: 'kudo.jpeg',
-          explanatioon: "",
+          explanatioon: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
           link: '',
           skills: {
             lang1: require('../assets/logo.png'),
@@ -51,10 +51,11 @@ export default {
           title: "Comming soon...",
           sub_title: "- We look forward to ! -",
           background: 'shirine.jpg',
-          explanatioon: "",
+          explanatioon: "stay tuned...",
           link: '',
           skills: {
-            
+            lang1: require('../assets/django.svg'),
+            lang2: require('../assets/python-5.svg')
           }
         },
       },
@@ -76,6 +77,7 @@ export default {
   margin: 0 auto;
   text-align: center;
   font-size: 40px;
+  padding-top: 50px;
 }
 
 .app-skills {
@@ -134,7 +136,7 @@ h2 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   letter-spacing: 0.8px;
   text-align: center;
-  padding-top: 50px;
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.4); 
 }
 
 .pf-wrap {
