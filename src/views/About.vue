@@ -152,7 +152,7 @@ export default {
 
 .lower-about {
   width: cover;
-  height: 700px;
+  height: 850px;
   margin: 0 auto;
 }
 
@@ -177,6 +177,8 @@ export default {
   width: 80px;
   height: 70px;
   margin-right: 30px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.4);
+  padding: 15px 10px;
 }
 
 .side-pic {
