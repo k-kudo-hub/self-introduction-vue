@@ -8,8 +8,8 @@
             <h3 class="app-title">{{ app.title }}</h3>
             <h4 class="app-sub">{{ app.sub_title }}</h4>
             <div class="app-skills">
-              <img :src="app.skills.lang1" class="app-skill">
-              <img :src="app.skills.lang2" class="app-skill">
+              <img :src="app.langs.lang1" class="app-skill">
+              <img :src="app.langs.lang2" class="app-skill">
             </div>
             <p class="app-exp">{{ app.explanatioon }}</p>
             <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
@@ -31,7 +31,7 @@ export default {
           background: 'caregiver.jpg',
           explanatioon: "A portfolio with the theme of maximizing time with customers. 「long report」「Recording on paper media」This app frees caregivers from them.",
           link: 'https://github.com/k-kudo-hub/sup_app',
-          skills: {
+          langs: {
             lang1: require('../assets/rails-1.svg'),
             lang2: require('../assets/ruby.svg')
           }
@@ -41,8 +41,8 @@ export default {
           sub_title: "- Welcome to my world. -",
           background: 'kudo.jpeg',
           explanatioon: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
-          link: '',
-          skills: {
+          link: 'https://github.com/k-kudo-hub/self-introduction-vue',
+          langs: {
             lang1: require('../assets/logo.png'),
             lang2: require('../assets/nodejs-1.svg')
           }
@@ -53,7 +53,7 @@ export default {
           background: 'shirine.jpg',
           explanatioon: "stay tuned...",
           link: '',
-          skills: {
+          langs: {
             lang1: require('../assets/django.svg'),
             lang2: require('../assets/python-5.svg')
           }
@@ -100,14 +100,13 @@ export default {
   text-decoration: none;
   font-family: sans-serif;
   padding: 1.5vh 2vw;
-  border: 1px solid black;
   border-radius: 10px;
   background-color: rgba(0,0,0, 0.6);
   color: white;
 }
 
 .app-link:hover {
-  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.8);
 }
 
 .pf-image {
