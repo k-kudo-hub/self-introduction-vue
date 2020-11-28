@@ -4,7 +4,7 @@
 
     </div>
     <div class="head-title">
-      <h1>Title.vue</h1>
+      <h1>Self-introduce.vue</h1>
     </div>
     <div class="head-menu">
       <ul class="menu-bar">
