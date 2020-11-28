@@ -12,7 +12,7 @@
               <img :src="app.skills.lang2" class="app-skill">
             </div>
             <p class="app-exp">{{ app.explanatioon }}</p>
-            <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See More <i class="fas fa-external-link-alt"></i></a>
+            <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </template>
@@ -30,7 +30,7 @@ export default {
           sub_title: "- support caregiver -",
           background: 'caregiver.jpg',
           explanatioon: "A portfolio with the theme of maximizing time with customers. 「long report」「Recording on paper media」This app frees caregivers from them.",
-          link: 'https://www.sup-app.net/',
+          link: 'https://github.com/k-kudo-hub/sup_app',
           skills: {
             lang1: require('../assets/rails-1.svg'),
             lang2: require('../assets/ruby.svg')
