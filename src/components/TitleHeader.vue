@@ -9,16 +9,16 @@
     <div class="head-menu">
       <ul class="menu-bar">
         <li class="menu-item">
-          <router-link to="/" active-class="link-active" exact class="menu-link">Home</router-link>
+          <router-link to="/" active-class="link-active" exact class="menu-link"><i class="fas fa-home"></i> Home</router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/about" active-class="link-active" exact class="menu-link">About</router-link>
+          <router-link to="/about" active-class="link-active" exact class="menu-link"><i class="fas fa-male"></i> About</router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/portfolio" active-class="link-active" exact class="menu-link">Portfolio</router-link>
+          <router-link to="/portfolio" active-class="link-active" exact class="menu-link"><i class="fas fa-briefcase"></i> Portfolio</router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/contact" active-class="link-active" exact class="menu-link">Contact</router-link>
+          <router-link to="/contact" active-class="link-active" exact class="menu-link"><i class="fas fa-comments"></i> Contact</router-link>
         </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
 export default {
   data(){
     return{
-      
+
     }
   }
 }
