@@ -25,30 +25,27 @@
         <br>
         <h3>Front-end</h3>
         <div class="side-pic">
-          <img src="../assets/html5.svg" class="lang">
-          <img src="../assets/css-5.svg" class="lang">
-          <img src="../assets/javascript-4.svg" class="lang">
-          <img src="../assets/logo.png" class="lang">
+          <template v-for="skill in skills.front"> 
+            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
+          </template>
         </div>
         <h3>Backｰend・Framework</h3>
         <div class="side-pic">
-          <img src="../assets/ruby.svg" class="lang">
-          <img src="../assets/rails-1.svg" class="lang">
-          <img src="../assets/python-5.svg" class="lang">
-          <img src="../assets/django.svg" class="lang">
+          <template v-for="skill in skills.back"> 
+            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
+          </template>
         </div>
         <h3>infrastructure・Database</h3>
         <div class="side-pic">
-          <img src="../assets/docker.svg" class="lang">
-          <img src="../assets/circle-logo-stacked-black.png" class="lang">
-          <img src="../assets/mysql.svg" class="lang">
-          <img src="../assets/mariadb.svg" class="lang">
+          <template v-for="skill in skills.inf"> 
+            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
+          </template>
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
-          <img src="../assets/github-icon-1.svg" class="lang">
-          <img src="../assets/slack-2.svg" class="lang">
-          <img src="../assets/trello.svg" class="lang">
+          <template v-for="skill in skills.other"> 
+            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
+          </template>
         </div>
       </div>
     </div>
@@ -60,21 +57,11 @@
         :autoplayTimeout="carousel.number"
         :autoplayHoverPause="carousel.bool"
       >
-        <slide>
-          <img src='../assets/ski.jpg' class="slide-pic">
-        </slide>
-        <slide>
-          <img src='../assets/fire.jpg' class="slide-pic">
-        </slide>
-        <slide>
-          <img src='../assets/tokyo-dome.jpg' class="slide-pic">
-        </slide>
-        <slide>
-          <img src='../assets/sunset.jpg' class="slide-pic">
-        </slide>
-        <slide>
-          <img src='../assets/lift.jpg' class="slide-pic">
-        </slide>
+        <template v-for="pic in carousel.image">
+          <slide :key="pic.id">
+            <img :src="require(`../assets/${pic.url}`)" class="slide-pic">
+          </slide>
+        </template>
       </carousel>
     </div>
   </div>
@@ -86,9 +73,41 @@ import { Carousel, Slide } from 'vue-carousel';
 export default {
   data(){
     return {
+      skills: {
+        front: [
+          { id: 1, url: "html5.svg" },
+          { id: 2, url: "css-5.svg" },
+          { id: 3, url: "javascript-4.svg" },
+          { id: 4, url: "logo.png" },
+        ],
+        back: [
+          { id: 1, url: "ruby.svg" },
+          { id: 2, url: "rails-1.svg" },
+          { id: 3, url: "python-5.svg" },
+          { id: 4, url: "django.svg" },
+        ],
+        inf: [
+          { id: 1, url: "docker.svg" },
+          { id: 2, url: "circle-logo-stacked-black.png" },
+          { id: 3, url: "mysql.svg" },
+          { id: 4, url: "mariadb.svg" },
+        ],
+        other: [
+          { id: 1, url: "github-icon-1.svg" },
+          { id: 2, url: "slack-2.svg" },
+          { id: 3, url: "trello.svg" },
+        ],
+      },
       carousel: {
         bool: true,
-        number: 4000
+        number: 4000,
+        image: [
+          { id: 1, url: "ski.jpg" },
+          { id: 2, url: "fire.jpg" },
+          { id: 3, url: "tokyo-dome.jpg" },
+          { id: 4, url: "sunset.jpg" },
+          { id: 5, url: "lift.jpg" },
+        ],
       },
     }
   },
@@ -98,8 +117,6 @@ export default {
   }
 };
 </script>
-
-
 
 <style scoped>
 
@@ -130,6 +147,7 @@ export default {
   width: 80vw;
   height: 500px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .lower-about {
@@ -163,6 +181,7 @@ export default {
 
 .side-pic {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 30px;
 }
 
