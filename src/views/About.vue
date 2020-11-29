@@ -102,11 +102,17 @@ export default {
         bool: true,
         number: 4000,
         image: [
-          { id: 1, url: "ski.jpg" },
-          { id: 2, url: "fire.jpg" },
-          { id: 3, url: "tokyo-dome.jpg" },
-          { id: 4, url: "sunset.jpg" },
-          { id: 5, url: "lift.jpg" },
+          { id: 1, url: "hanami.jpg" },
+          { id: 2, url: "sakura.jpg" },
+          { id: 3, url: "sunset.jpg" },
+          { id: 4, url: "beer.jpg" },
+          { id: 5, url: "floor.jpg" },
+          { id: 6, url: "fire.jpg" },
+          { id: 7, url: "aki.jpg" },
+          { id: 8, url: "ramen.jpg" },
+          { id: 9, url: "tokyo-dome.jpg" },
+          { id: 10, url: "ski.jpg" },          
+          { id: 11, url: "lift.jpg" }, 
         ],
       },
     }
@@ -177,7 +183,6 @@ export default {
   width: 80px;
   height: 70px;
   margin-right: 30px;
-  box-shadow: 5px 5px 5px rgba(0,0,0,.4);
   padding: 15px 10px;
 }
 
@@ -188,7 +193,7 @@ export default {
 }
 
 .slide-pic {
-  width: 450px;
+  width: 500px;
   height: 300px;
 }
 
