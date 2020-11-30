@@ -2,12 +2,10 @@
   <div class="home">
     <div class="upper-home">
       <div class="upper-home-mask">
-        <div class="home-title">
-          <h2>Welcome!</h2>
-          <p>This is his self-introduction page.</p>
-          <p>Do you Want to know him?</p>
-          <button @click="toAbout" class="button to-about">See About</button>
-        </div>
+        <h2>Welcome home!</h2>
+        <p>This is his self-introduction page.</p>
+        <p>Do you Want to know him?</p>
+        <button @click="toAbout" class="button to-about">See About</button>
       </div>
     </div>
     <div class="middle-home home-block">
@@ -82,13 +80,6 @@ export default {
   height: 450px;
 }
 
-.home-title {
-  color: #ffff;
-  margin: auto;
-  text-align: center;
-  padding: 110px 0;
-}
-
 .lower-content {
   text-align: center;
   padding: 130px;
@@ -160,7 +151,11 @@ export default {
 .upper-home-mask {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);;
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffff;
+  margin: auto;
+  text-align: center;
+  padding: 110px 0;
 }
 
 </style>
