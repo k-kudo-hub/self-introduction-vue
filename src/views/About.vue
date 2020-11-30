@@ -53,9 +53,13 @@
       <h2 class="about-title">Photo Gallery</h2>
       <br>
       <carousel
-        :autoplay="carousel.bool"
-        :autoplayTimeout="carousel.number"
-        :autoplayHoverPause="carousel.bool"
+        :per-page=1
+        :autoplay="carousel.autoplay"
+        :autoplayTimeout="carousel.time"
+        :autoplayHoverPause="carousel.pause"
+        :navigation-enabled="true"
+        navigation-prev-label="〈"
+        navigation-next-label="〉"
       >
         <template v-for="pic in carousel.image">
           <slide :key="pic.id">
@@ -99,8 +103,10 @@ export default {
         ],
       },
       carousel: {
+        autoplay: true,
         bool: true,
-        number: 4000,
+        pause: true,
+        time: 5000,
         image: [
           { id: 1, url: "hanami.jpg" },
           { id: 2, url: "sakura.jpg" },
@@ -150,7 +156,7 @@ export default {
 }
 
 .bottom-about {
-  width: 80vw;
+  width: 60vw;
   height: 500px;
   margin: 0 auto;
   text-align: center;
@@ -214,6 +220,10 @@ export default {
 }
 
 @media screen and (max-width:959px) {
+
+.bottom-about {
+  width: 80vw;
+}
 
 .lower-text-area,
 .middle-text-area {
