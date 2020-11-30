@@ -1,6 +1,12 @@
 <template>
   <div>
-    <h2>Portfolio</h2>
+    <div class="pf-label">
+      <div class="label-mask">
+        <h2>Portfolio</h2>
+        <p>His work is displayed here.</p>
+        <p>Github is also open to the public.</p>
+      </div>
+    </div>
     <div class="pf-wrap">
       <template v-for="app in pf">
         <div class="pf-block" :key="app.title" :style="{'background-image': 'url(' + require(`../assets/${app.background}`) + ')'}">
@@ -8,8 +14,8 @@
             <h3 class="app-title">{{ app.title }}</h3>
             <h4 class="app-sub">{{ app.sub_title }}</h4>
             <div class="app-skills">
-              <img :src="app.langs.lang1" class="app-skill">
-              <img :src="app.langs.lang2" class="app-skill">
+              <img :src="require(`../assets/${app.langs.lang1}`)" class="app-skill">
+              <img :src="require(`../assets/${app.langs.lang2}`)" class="app-skill">
             </div>
             <p class="app-exp">{{ app.explanatioon }}</p>
             <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
@@ -29,11 +35,11 @@ export default {
           title: "Sup-App",
           sub_title: "- support caregiver -",
           background: 'caregiver.jpg',
-          explanatioon: "A portfolio with the theme of maximizing time with customers. 「long report」「Recording on paper media」This app frees caregivers from them.",
+          explanatioon: "A portfolio with the theme of maximizing time with customers. It is an application that frees caregivers from 「long reports」 and 「recording on paper media」.",
           link: 'https://github.com/k-kudo-hub/sup_app',
           langs: {
-            lang1: require('../assets/rails-1.svg'),
-            lang2: require('../assets/ruby.svg')
+            lang1: 'rails-1.svg',
+            lang2: 'ruby.svg',
           }
         },
         intr: {
@@ -43,8 +49,8 @@ export default {
           explanatioon: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
           link: 'https://github.com/k-kudo-hub/self-introduction-vue',
           langs: {
-            lang1: require('../assets/logo.png'),
-            lang2: require('../assets/nodejs-1.svg')
+            lang1: 'logo.png',
+            lang2: 'nodejs-1.svg',
           }
         },
         com: {
@@ -54,8 +60,8 @@ export default {
           explanatioon: "stay tuned...",
           link: '',
           langs: {
-            lang1: require('../assets/django.svg'),
-            lang2: require('../assets/python-5.svg')
+            lang1: 'django.svg',
+            lang2: 'python-5.svg',
           }
         },
       },
@@ -102,11 +108,36 @@ export default {
   padding: 1.5vh 2vw;
   border-radius: 10px;
   background-color: rgba(0,0,0, 0.6);
-  color: white;
+  color: #ffff;
 }
 
 .app-link:hover {
   background-color: rgba(0,0,0, 0.8);
+}
+
+.label-mask {
+  width: 100%;
+  height: calc(100% - 220px);
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffff;
+  margin: auto;
+  text-align: center;
+  padding: 110px 0;
+}
+
+.pf-label {
+  width: cover;
+  height: 400px;
+  background-image: url('../assets/sunset.jpg');
+  background-size: 100%;
+  margin-bottom: 50px;
+  background-position: bottom;
+  transition-duration: 2s;
+}
+
+.pf-label:hover {
+  background-size: 120%;
+  transition-duration: 2s;
 }
 
 .pf-image {
@@ -145,4 +176,5 @@ h2 {
   margin: 0 auto 50px;
   flex-wrap: wrap;
 }
+
 </style>
