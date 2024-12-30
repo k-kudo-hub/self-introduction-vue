@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import 'normalize.css'
 import TitleHeader from './components/TitleHeader.vue'
 import NormalFooter from './components/NormalFooter.vue'
