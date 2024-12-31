@@ -25,11 +25,11 @@ const props = defineProps({
   },
   buttonTitle: {
     type: String,
-    required: true
+    required: false
   },
   onClickButton: {
     type: Function as PropType<() => void>,
-    required: true
+    required: false
   },
   imageName: {
     type: String,
