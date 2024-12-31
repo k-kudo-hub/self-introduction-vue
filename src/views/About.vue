@@ -93,8 +93,9 @@ const age = useCurrentAge('1996-06-08');
         <pre class="about-content">2015  Graduated from Murakami Sakuragaoka High School</pre>
         <pre class="about-content">2019  Graduated from Niigata University of Health and Welfare</pre>
         <pre class="about-content">2020  Start programming...</pre>
-        <pre class="about-content">2021  Start web engineer career</pre>
+        <pre class="about-content">2021  Start software engineer career</pre>
         <pre class="about-content">2022  Join airCloset Inc.</pre>
+        <pre class="about-content">2023  Turned to SRE.</pre>
       </div>
     </div>
     <div class="lower-about">
