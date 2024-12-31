@@ -1,24 +1,22 @@
 <template>
   <div>
-    <div class="head-margin">
-
-    </div>
+    <div class="head-belt"></div>
     <div class="head-title">
       <h1>Self-introduction.vue</h1>
     </div>
     <div class="head-menu">
       <ul class="menu-bar">
         <li class="menu-item">
-          <router-link to="/" active-class="link-active" exact class="menu-link"><i class="fas fa-home"></i> Home</router-link>
+          <router-link to="/" active-class="link-active" exact class="menu-link"><i class="fas fa-home"></i> <span class="menu-title">Home</span></router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/about" active-class="link-active" exact class="menu-link"><i class="fas fa-male"></i> About</router-link>
+          <router-link to="/about" active-class="link-active" exact class="menu-link"><i class="fas fa-male"></i> <span class="menu-title">About</span></router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/portfolio" active-class="link-active" exact class="menu-link"><i class="fas fa-briefcase"></i> Portfolio</router-link>
+          <router-link to="/portfolio" active-class="link-active" exact class="menu-link"><i class="fas fa-briefcase"></i> <span class="menu-title">Portfolio</span></router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/gallery" active-class="link-active" exact class="menu-link"><i class="fas fa-image"></i> Gallery</router-link>
+          <router-link to="/gallery" active-class="link-active" exact class="menu-link"><i class="fas fa-image"></i> <span class="menu-title">Gallery</span></router-link>
         </li>
       </ul>
     </div>
@@ -36,7 +34,7 @@ export default {
 </script>
 
 <style>
-.head-margin {
+.head-belt {
   width: 100%;
   height: 20px;
   background-color: #00002c;
@@ -71,6 +69,12 @@ export default {
 .menu-item {
   padding: 15px 30px;
   font-weight: bold;
+}
+
+@media screen and (max-width:480px) {
+  .menu-title {
+    display: none;
+  }
 }
 
 .menu-link {

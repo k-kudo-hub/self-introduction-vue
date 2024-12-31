@@ -83,7 +83,7 @@ export default {
 
 .lower-content {
   text-align: center;
-  padding: 130px;
+  padding: 130px 0;
   margin: 0 auto;
 }
 
@@ -94,8 +94,9 @@ export default {
 
 .lower-home {
   background-image: url('../assets/images/caregiver.jpg');
+  background-size: cover;
   background-position: center;
-  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .lower-home-mask {
@@ -112,7 +113,7 @@ export default {
 
 .middle-content {
   margin: 0 auto;
-  padding: 180px
+  padding: 180px 0;
 }
 
 .to-about {
@@ -156,6 +157,8 @@ export default {
 
 .upper-home-mask {
   position: relative;
+  width: 100%;
+  height: calc(100% - 110px * 2);
   background: rgba(0, 0, 0, 0.7);
   color: #ffff;
   margin: auto;
