@@ -8,7 +8,9 @@
       <div>
         <slot></slot>
       </div>
-      <button @click="onClickButton" class="button">{{ buttonTitle }}</button>
+      <div v-if="isUseButton">
+        <button @click="onClickButton" class="button">{{ buttonTitle }}</button>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +36,7 @@ const props = defineProps({
     required: true
   }
 })
-
+const isUseButton = computed(() => props.onClickButton !== undefined && props.buttonTitle !== undefined);
 const backgroundImage = computed(() => props.imageName);
 </script>
 
@@ -51,7 +53,6 @@ const backgroundImage = computed(() => props.imageName);
   position: absolute;
   top: 0;
   left: 0;
-  /** background: v-bind(backgroundImage) no-repeat center center/cover; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

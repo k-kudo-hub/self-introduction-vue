@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <TitleBoardWithSingleButton
+    <TitleBoard
       title="Welcome!"
       buttonTitle="See about"
       :imageName="shrineImage"
@@ -8,7 +8,7 @@
     >
       <p>This is his self-introduction page.</p>
       <p>Do you want to know him?</p>
-    </TitleBoardWithSingleButton>
+    </TitleBoard>
     <div class="middle-home home-block">
       <div class="middle-content">
         <h2>"Confront inconvenience"</h2>
@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import TitleBoardWithSingleButton from "../components/organisms/TitleBoardWithSingleButton.vue";
+import TitleBoard from "../components/organisms/TitleBoard.vue";
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 import shrineImage from '../assets/images/shrine.jpg';
