@@ -8,13 +8,13 @@
       </div>
     </div>
     <div class="pf-wrap">
-      <div v-for="app in pf" class="pf-block" :key="app.title" :style="{'background-image': 'url(' + import(`../assets/${app.background}`) + ')'}">
+      <div v-for="app in pf" class="pf-block" :key="app.title" :style="{'background-image': 'url(' + require(`../assets/images/${app.background}`) + ')'}">
         <div class="pf-mask">
           <h3 class="app-title">{{ app.title }}</h3>
           <h4 class="app-sub">{{ app.sub_title }}</h4>
           <div class="app-skills">
-            <img :src="require(`../assets/${app.langs.lang1}`)" class="app-skill">
-            <img :src="require(`../assets/${app.langs.lang2}`)" class="app-skill">
+            <img :src="require(`../assets/icons/${app.langs.lang1}`)" class="app-skill">
+            <img :src="require(`../assets/icons/${app.langs.lang2}`)" class="app-skill">
           </div>
           <p class="app-exp">{{ app.explanation }}</p>
           <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
@@ -126,7 +126,7 @@ export default {
 .pf-label {
   width: cover;
   height: 400px;
-  background-image: url('../assets/sunset.jpg');
+  background-image: url('../assets/images/sunset.jpg');
   background-size: 100%;
   margin-bottom: 50px;
   background-position: bottom;

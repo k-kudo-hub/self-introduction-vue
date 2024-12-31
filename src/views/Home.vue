@@ -93,7 +93,7 @@ export default {
 }
 
 .lower-home {
-  background-image: url('../assets/caregiver.jpg');
+  background-image: url('../assets/images/caregiver.jpg');
   background-position: center;
   background-size: 100%;
 }
@@ -149,7 +149,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background: url('../assets/shrine.jpg') no-repeat center center/cover;
+  background: url('../assets/images/shrine.jpg') no-repeat center center/cover;
   transition: transform 2s ease-in-out;
   z-index: 0;
 }

@@ -8,7 +8,7 @@
       :transition="800"
     >
       <Slide v-for="(pic, index) in carousel.image" :key="index">
-        <img :src="require(`../assets/${pic.url}`)" class="slide-pic">
+        <img :src="require(`../assets/images/${pic.url}`)" class="slide-pic">
       </Slide>
     </Carousel>
   </div>

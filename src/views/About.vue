@@ -57,19 +57,19 @@ export default {
         <br>
         <h3>Frontend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.front" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.front" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
         <h3>Backend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.back" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.back" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
         <h3>infrastructure・Database</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.inf" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.inf" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.other" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.other" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
       </div>
     </div>
@@ -144,7 +144,7 @@ export default {
 
 .upper-about {
   background-color: #c7c7c7;
-  background-image: url('../assets/kudo.jpeg');
+  background-image: url('../assets/images/kudo.jpeg');
   background-position: top center;
   background-size: 80%;
   background-repeat: no-repeat;
