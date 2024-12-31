@@ -3,9 +3,9 @@
     <div class="upper-home">
       <div class="upper-home-background"></div>
       <div class="upper-home-mask">
-        <h2>Welcome home!</h2>
+        <h2>Welcome!</h2>
         <p>This is his self-introduction page.</p>
-        <p>Do you Want to know him?</p>
+        <p>Do you want to know him?</p>
         <button @click="toAbout" class="button to-about">See About</button>
       </div>
     </div>
@@ -149,7 +149,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background: url('../assets/shirine.jpg') no-repeat center center/cover;
+  background: url('../assets/shrine.jpg') no-repeat center center/cover;
   transition: transform 2s ease-in-out;
   z-index: 0;
 }

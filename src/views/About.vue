@@ -47,7 +47,7 @@ export default {
         <pre>2009   NST Boys and Girls Swimming Tournament 7th</pre>
         <pre>2010   Niigata Middle Distance Swimming Championship 4th</pre>
         <pre>2015   Graduated from Murakami Sakuragaoka High School</pre>
-        <pre>2019   Graduated from Niigata University of Helth and Welfare</pre>
+        <pre>2019   Graduated from Niigata University of Health and Welfare</pre>
         <pre>2020   Start programming...</pre>
       </div>
     </div>
@@ -55,11 +55,11 @@ export default {
       <div class="lower-text-area">
         <h2 class="about-title">Programming Skill</h2>
         <br>
-        <h3>Front-end</h3>
+        <h3>Frontend</h3>
         <div class="side-pic">
           <img v-for="(skill, index) in skills.front" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
         </div>
-        <h3>Backｰend・Framework</h3>
+        <h3>Backend</h3>
         <div class="side-pic">
           <img v-for="(skill, index) in skills.back" :src="require(`../assets/${skill.url}`)" :key="index" class="lang" />
         </div>
