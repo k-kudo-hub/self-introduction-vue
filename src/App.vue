@@ -10,8 +10,8 @@
 
 <script lang="ts">
 import 'normalize.css'
-import TitleHeader from './components/TitleHeader.vue'
-import NormalFooter from './components/NormalFooter.vue'
+import TitleHeader from './components/organisms/TitleHeader.vue'
+import NormalFooter from './components/organisms/NormalFooter.vue'
 
 export default {
   data(){
