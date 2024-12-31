@@ -1,32 +1,40 @@
-<script lang="ts">
-export default {
-  data(){
-    return {
-      skills: {
-        front: [
-          { url: "logo.png" },
-          { url: "javascript-4.svg" },
-        ],
-        back: [
-          { url: "ruby.svg" },
-          { url: "rails-1.svg" },
-          { url: "python-5.svg" },
-          { url: "django.svg" },
-        ],
-        inf: [
-          { url: "docker.svg" },
-          { url: "circle-logo-stacked-black.png" },
-          { url: "mysql.svg" },
-          { url: "mariadb.svg" },
-        ],
-        other: [
-          { url: "github-icon-1.svg" },
-          { url: "slack-2.svg" },
-          { url: "trello.svg" },
-        ],
-      },
-    }
-  },
+<script lang="ts" setup>
+import vueLogo from '../assets/icons/logo.png';
+import javascriptLogo from '../assets/icons/javascript-4.svg';
+import rubyLogo from '../assets/icons/ruby.svg';
+import railsLogo from '../assets/icons/rails-1.svg';
+import pythonLogo from '../assets/icons/python-5.svg';
+import djangoLogo from '../assets/icons/django.svg';
+import dockerLogo from '../assets/icons/docker.svg';
+import circleLogo from '../assets/icons/circle-logo-stacked-black.png';
+import mysqlLogo from '../assets/icons/mysql.svg';
+import mariadbLogo from '../assets/icons/mariadb.svg';
+import githubLogo from '../assets/icons/github-icon-1.svg';
+import slackLogo from '../assets/icons/slack-2.svg';
+import trelloLogo from '../assets/icons/trello.svg';
+
+const skills = {
+  front: [
+    { url: vueLogo },
+    { url: javascriptLogo },
+  ],
+  back: [
+    { url: rubyLogo },
+    { url: railsLogo },
+    { url: pythonLogo },
+    { url: djangoLogo },
+  ],
+  inf: [
+    { url: dockerLogo },
+    { url: circleLogo },
+    { url: mysqlLogo },
+    { url: mariadbLogo },
+  ],
+  other: [
+    { url: githubLogo },
+    { url: slackLogo },
+    { url: trelloLogo },
+  ],
 };
 </script>
 
@@ -55,19 +63,19 @@ export default {
         <h2 class="about-title">Programming Skill</h2>
         <h3>Frontend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.front" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.front" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>Backend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.back" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.back" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>infrastructure・Database</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.inf" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.inf" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.other" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.other" :src="skill.url" :key="index" class="lang" />
         </div>
       </div>
     </div>

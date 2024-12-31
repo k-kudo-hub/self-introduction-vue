@@ -8,13 +8,13 @@
       </div>
     </div>
     <div class="pf-wrap">
-      <div v-for="app in pf" class="pf-block" :key="app.title" :style="{'background-image': 'url(' + require(`../assets/images/${app.background}`) + ')'}">
+      <div v-for="app in pf" class="pf-block" :key="app.title" :style="{'background-image': 'url(' + `${app.background}` + ')'}">
         <div class="pf-mask">
           <h3 class="app-title">{{ app.title }}</h3>
           <h4 class="app-sub">{{ app.sub_title }}</h4>
           <div class="app-skills">
-            <img :src="require(`../assets/icons/${app.langs.lang1}`)" class="app-skill">
-            <img :src="require(`../assets/icons/${app.langs.lang2}`)" class="app-skill">
+            <img :src="app.langs.lang1" class="app-skill">
+            <img :src="app.langs.lang2" class="app-skill">
           </div>
           <p class="app-exp">{{ app.explanation }}</p>
           <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
@@ -24,46 +24,50 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  data(){
-    return {
-      pf: {
-        sup: {
-          title: "Sup-App",
-          sub_title: "- support caregiver -",
-          background: 'caregiver.jpg',
-          explanation: "A portfolio with the theme of maximizing time with customers. It is an application that frees caregivers from 「long reports」 and 「recording on paper media」.",
-          link: 'https://github.com/k-kudo-hub/sup_app',
-          langs: {
-            lang1: 'rails-1.svg',
-            lang2: 'ruby.svg',
-          }
-        },
-        intr: {
-          title: "Self-introduce-vue",
-          sub_title: "- Welcome to my world. -",
-          background: 'kudo.jpeg',
-          explanation: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
-          link: 'https://github.com/k-kudo-hub/self-introduction-vue',
-          langs: {
-            lang1: 'logo.png',
-            lang2: 'nodejs-1.svg',
-          }
-        },
-        com: {
-          title: "Coming soon...",
-          sub_title: "- We look forward to ! -",
-          background: 'shrine.jpg',
-          explanation: "stay tuned...",
-          link: '',
-          langs: {
-            lang1: 'django.svg',
-            lang2: 'python-5.svg',
-          }
-        },
-      },
-    };
+<script lang="ts" setup>
+import railsLogo from '../assets/icons/rails-1.svg';
+import rubyLogo from '../assets/icons/ruby.svg';
+import vueLogo from '../assets/icons/logo.png';
+import nodeLogo from '../assets/icons/nodejs-1.svg';
+import djangoLogo from '../assets/icons/django.svg';
+import pythonLogo from '../assets/icons/python-5.svg';
+import caregiverImage from '../assets/images/caregiver.jpg';
+import kudoImage from '../assets/images/kudo.jpeg';
+import shrineImage from '../assets/images/shrine.jpg';
+
+const pf = {
+  sup: {
+    title: "Sup-App",
+    sub_title: "- support caregiver -",
+    background: caregiverImage,
+    explanation: "A portfolio with the theme of maximizing time with customers. It is an application that frees caregivers from 「long reports」 and 「recording on paper media」.",
+    link: 'https://github.com/k-kudo-hub/sup_app',
+    langs: {
+      lang1: railsLogo,
+      lang2: rubyLogo,
+    }
+  },
+  intr: {
+    title: "Self-introduce-vue",
+    sub_title: "- Welcome to my world. -",
+    background: kudoImage,
+    explanation: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
+    link: 'https://github.com/k-kudo-hub/self-introduction-vue',
+    langs: {
+      lang1: vueLogo,
+      lang2: nodeLogo,
+    }
+  },
+  com: {
+    title: "Coming soon...",
+    sub_title: "- We look forward to ! -",
+    background: shrineImage,
+    explanation: "stay tuned...",
+    link: '',
+    langs: {
+      lang1: djangoLogo,
+      lang2: pythonLogo,
+    }
   },
 };
 </script>
