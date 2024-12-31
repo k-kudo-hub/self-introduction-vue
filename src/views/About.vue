@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import vueLogo from '../assets/icons/logo.png';
-import javascriptLogo from '../assets/icons/javascript-4.svg';
 import rubyLogo from '../assets/icons/ruby.svg';
 import railsLogo from '../assets/icons/rails-1.svg';
 import pythonLogo from '../assets/icons/python-5.svg';
@@ -13,27 +12,62 @@ import githubLogo from '../assets/icons/github-icon-1.svg';
 import slackLogo from '../assets/icons/slack-2.svg';
 import trelloLogo from '../assets/icons/trello.svg';
 import { useCurrentAge } from '@/composables/useDateUtils';
+import typeScriptLogo from '../assets/icons/typescript.jpg';
+import javaScriptLogo from '../assets/icons/javascript.jpg';
+import reactLogo from '../assets/icons/react.svg';
+import dartLogo from '../assets/icons/dart.svg';
+import gasLogo from '../assets/icons/google-app-script.png';
+import openAiLogo from '../assets/icons/openai.svg';
+import postgresLogo from '../assets/icons/postgresql.svg';
+import netlifyLogo from '../assets/icons/netlify.svg';
+import ansibleLogo from '../assets/icons/ansible.svg';
+import nestjsLogo from '../assets/icons/nestjs.svg';
+import lambdaLogo from '../assets/icons/aws-lambda.svg';
+import stepFunctionsLogo from '../assets/icons/aws-step-functions.svg';
+import wafLogo from '../assets/icons/aws-waf.png';
+import s3Logo from '../assets/icons/aws-s3.svg';
+import redshiftLogo from '../assets/icons/aws-redshift.png';
+import ecsLogo from '../assets/icons/aws-ecs.png';
 
 const skills = {
-  front: [
-    { url: vueLogo },
-    { url: javascriptLogo },
-  ],
-  back: [
+  languages: [
+    { url: typeScriptLogo },
+    { url: javaScriptLogo },
     { url: rubyLogo },
-    { url: railsLogo },
     { url: pythonLogo },
+    { url: dartLogo },
+  ],
+  frameworks: [
+    { url: reactLogo },
+    { url: vueLogo },
+    { url: nestjsLogo },
+    { url: railsLogo },
     { url: djangoLogo },
   ],
-  inf: [
-    { url: dockerLogo },
-    { url: circleLogo },
+  databases: [
     { url: mysqlLogo },
     { url: mariadbLogo },
+    { url: postgresLogo },
+  ],
+  infrastructures: [
+    { url: dockerLogo },
+    { url: ecsLogo },
+    { url: lambdaLogo },
+    { url: stepFunctionsLogo },
+    { url: wafLogo },
+    { url: s3Logo },
+    { url: redshiftLogo },
+  ],
+  ciCd: [
+    { url: circleLogo },
+    { url: ansibleLogo },
+    { url: netlifyLogo },
   ],
   other: [
     { url: githubLogo },
     { url: slackLogo },
+    { url: gasLogo },
+    { url: openAiLogo },
     { url: trelloLogo },
   ],
 };
@@ -53,28 +87,39 @@ const age = useCurrentAge('1996-06-08');
     <div class="middle-about about-block">
       <div class="middle-text-area">
         <h2 class="about-title">Career</h2>
-        <pre class="about-content">1996   Born in Niigata Japan</pre>
-        <pre class="about-content">2009   NST Boys and Girls Swimming Tournament 7th</pre>
-        <pre class="about-content">2010   Niigata Middle Distance Swimming Championship 4th</pre>
-        <pre class="about-content">2015   Graduated from Murakami Sakuragaoka High School</pre>
-        <pre class="about-content">2019   Graduated from Niigata University of Health and Welfare</pre>
-        <pre class="about-content">2020   Start programming...</pre>
+        <pre class="about-content">1996  Born in Niigata Japan</pre>
+        <pre class="about-content">2009  NST Boys and Girls Swimming Tournament 7th</pre>
+        <pre class="about-content">2010  Niigata Middle Distance Swimming Championship 4th</pre>
+        <pre class="about-content">2015  Graduated from Murakami Sakuragaoka High School</pre>
+        <pre class="about-content">2019  Graduated from Niigata University of Health and Welfare</pre>
+        <pre class="about-content">2020  Start programming...</pre>
+        <pre class="about-content">2021  Start software engineer career</pre>
+        <pre class="about-content">2022  Join airCloset Inc.</pre>
+        <pre class="about-content">2023  Turned to SRE.</pre>
       </div>
     </div>
     <div class="lower-about">
       <div class="lower-text-area">
-        <h2 class="about-title">Programming Skill</h2>
-        <h3>Frontend</h3>
+        <h2 class="about-title">Skills</h2>
+        <h3>Languages</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.front" :src="skill.url" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.languages" :src="skill.url" :key="index" class="lang" />
         </div>
-        <h3>Backend</h3>
+        <h3>Frameworks</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.back" :src="skill.url" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.frameworks" :src="skill.url" :key="index" class="lang" />
         </div>
-        <h3>infrastructure・Database</h3>
+        <h3>Databases</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.inf" :src="skill.url" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.databases" :src="skill.url" :key="index" class="lang" />
+        </div>
+        <h3>infrastructure</h3>
+        <div class="side-pic">
+          <img v-for="(skill, index) in skills.infrastructures" :src="skill.url" :key="index" class="lang" />
+        </div>
+        <h3>CI/CD pipelines</h3>
+        <div class="side-pic">
+          <img v-for="(skill, index) in skills.ciCd" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
