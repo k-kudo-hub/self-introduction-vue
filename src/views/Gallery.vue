@@ -1,22 +1,39 @@
 <template>
-  <div class="bottom-about">
-    <h2 class="about-title">Photo Gallery</h2>
-    <Carousel
-      :autoplay="5000"
-      :pauseAutoplayOnHover="true"
-      :wrapAround="true"
-      :transition="800"
-    >
-      <Slide v-for="(pic, index) in carouselImages" :key="index">
-        <img :src="pic.url" class="slide-pic">
-      </Slide>
-    </Carousel>
+  <div>
+    <section class="title">
+      <TitleBoard
+        title="Photo Gallery"
+        buttonTitle="See about"
+        :imageName="sakuraImage"
+      >
+        <p>This is his photo gallery page.</p>
+        <p>It doesn't look good, but you can take a look if you like.</p>
+      </TitleBoard>
+    </section>
+    <section class="content">
+      <Carousel
+        :autoplay="5000"
+        :pauseAutoplayOnHover="true"
+        :wrapAround="true"
+        :transition="800"
+      >
+        <Slide v-for="(pic, index) in carouselImages" :key="index">
+          <img :src="pic.url" class="slide-pic">
+        </Slide>
+
+        <template #addons>
+          <Navigation />
+          <Pagination />
+        </template>
+      </Carousel>
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
+import TitleBoard from '@/components/organisms/TitleBoard.vue';
 import 'vue3-carousel/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel';
+import { Carousel, Slide, Navigation, Pagination } from 'vue3-carousel';
 import hanamiImage from '../assets/images/hanami.jpg';
 import sakuraImage from '../assets/images/sakura.jpg';
 import sunsetImage from '../assets/images/sunset.jpg';
@@ -45,17 +62,26 @@ const carouselImages = [
 </script>
 
 <style scoped>
-.bottom-about {
-  width: cover;
+.title {
+  margin-bottom: 50px;
+}
+
+.content {
+  max-width: 90%;
   margin: 0 auto 50px;
 }
 
-.about-title {
-  text-align: center;
-  margin-bottom: 40px;
+.slide-pic {
+  width: 70%;
 }
 
-.slide-pic {
-  width: 60%;
+@media (max-width: 480px) {
+  .content {
+    max-width: 100%;
+  }
+
+  .slide-pic {
+    width: 80%;
+  }
 }
 </style>
