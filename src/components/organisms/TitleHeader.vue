@@ -2,7 +2,7 @@
   <div>
     <div class="head-belt"></div>
     <div class="head-title">
-      <h1>Self-introduction.vue</h1>
+      <h1>Cut - k-kudo-hub</h1>
     </div>
     <div class="head-menu">
       <ul class="menu-bar">
@@ -47,6 +47,7 @@ export default {
 }
 
 .head-title > h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
   margin: 0 auto;
   padding: 30px 10px;
