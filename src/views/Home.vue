@@ -1,14 +1,14 @@
 <template>
   <div class="home">
-    <div class="upper-home">
-      <div class="upper-home-background"></div>
-      <div class="upper-home-mask">
-        <h2>Welcome!</h2>
-        <p>This is his self-introduction page.</p>
-        <p>Do you want to know him?</p>
-        <button @click="toAbout" class="button to-about">See About</button>
-      </div>
-    </div>
+    <TitleBoardWithSingleButton
+      title="Welcome!"
+      buttonTitle="See about"
+      :imageName="shrineImage"
+      :onClickButton="toAbout"
+    >
+      <p>This is his self-introduction page.</p>
+      <p>Do you want to know him?</p>
+    </TitleBoardWithSingleButton>
     <div class="middle-home home-block">
       <div class="middle-content">
         <h2>"Confront inconvenience"</h2>
@@ -28,35 +28,38 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import TitleBoardWithSingleButton from "../components/organisms/TitleBoardWithSingleButton.vue";
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
+import shrineImage from '../assets/images/shrine.jpg';
 
-export default {
-  data(){
-    return {
-      visible: false
-    };
-  },
-  created(){
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  destroyed(){
-    window.removeEventListener("scroll", this.handleScroll);
-  },
-  methods: {
-    toAbout(){
-      this.$router.push({path: "about"});
-    },
-    toPortfolio(){
-      this.$router.push({path: "portfolio"});
-    },
-    handleScroll(){
-      if (!this.visible) {
-        var top = this.$el.getBoundingClientRect().top;
-        this.visible = top < window.innerHeight - 1300;
-      }
-    },
+const visible = ref(false);
+const router = useRouter();
+
+const handleScroll = () => {
+  const element = document.getElementById('app');
+  if (element && !visible.value) {
+    const top = element.getBoundingClientRect().top;
+    visible.value = top < window.innerHeight - 1300;
   }
-}
+};
+
+const toAbout = () => {
+  router.push({ path: 'about' });
+};
+
+const toPortfolio = () => {
+  router.push({ path: 'portfolio' });
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style scoped>
@@ -116,18 +119,6 @@ export default {
   padding: 180px 0;
 }
 
-.to-about {
-  color: #ffff;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid #ffff;
-}
-
-.to-about:hover {
-  transition-duration: 0.5s;
-  color: black;
-  background-color: rgb(255, 255, 255);
-}
-
 .to-portfolio {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
@@ -136,40 +127,6 @@ export default {
 .to-portfolio:hover {
   background-color: rgb(255, 255, 255);
   transition-duration: 0.5s;
-}
-
-.upper-home {
-  height: 50vh;
-  overflow: hidden;
-  position: relative;
-}
-
-.upper-home-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: url('../assets/images/shrine.jpg') no-repeat center center/cover;
-  transition: transform 2s ease-in-out;
-  z-index: 0;
-}
-
-.upper-home-mask {
-  position: relative;
-  width: 100%;
-  height: calc(100% - 110px * 2);
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffff;
-  margin: auto;
-  text-align: center;
-  padding: 110px 0;
-  z-index: 1;
-}
-
-.upper-home:hover .upper-home-background {
-  transform: scale(1.1);
-  transition-duration: 2s;
 }
 
 </style>
