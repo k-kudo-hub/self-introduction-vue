@@ -37,12 +37,13 @@ const props = defineProps({
   }
 })
 const isUseButton = computed(() => props.onClickButton !== undefined && props.buttonTitle !== undefined);
+const boardHeight = computed(() => isUseButton.value ? '50vh' : '40vh');
 const backgroundImage = computed(() => props.imageName);
 </script>
 
 <style scoped>
 .title-board {
-  height: 50vh;
+  height: v-bind(boardHeight);
   overflow: hidden;
   position: relative;
 }
