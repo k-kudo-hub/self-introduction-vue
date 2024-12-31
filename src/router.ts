@@ -2,13 +2,13 @@ import { createMemoryHistory, createRouter, createWebHashHistory, RouteRecordRaw
 import Home from './views/Home.vue';
 import About from './views/About.vue';
 import Portfolio from './views/Portfolio.vue';
-import Contact from './views/Contact.vue';
+import Gallery from './views/Gallery.vue';
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", component: Home },
   { path: "/about", component: About },
   { path: "/portfolio", component: Portfolio },
-  { path: "/contact", component: Contact }
+  { path: "/gallery", component: Gallery },
 ];
 
 export const router = createRouter({

@@ -1,7 +1,4 @@
 <script lang="ts">
-import 'vue3-carousel/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel'
-
 export default {
   data(){
     return {
@@ -28,26 +25,7 @@ export default {
           { url: "trello.svg" },
         ],
       },
-      carousel: {
-        image: [
-          { id: 1, url: "hanami.jpg" },
-          { id: 2, url: "sakura.jpg" },
-          { id: 3, url: "sunset.jpg" },
-          { id: 4, url: "beer.jpg" },
-          { id: 5, url: "floor.jpg" },
-          { id: 6, url: "fire.jpg" },
-          { id: 7, url: "aki.jpg" },
-          { id: 8, url: "ramen.jpg" },
-          { id: 9, url: "tokyo-dome.jpg" },
-          { id: 10, url: "ski.jpg" },          
-          { id: 11, url: "lift.jpg" }, 
-        ],
-      },
     }
-  },
-  components: {
-    Carousel,
-    Slide
   },
 };
 </script>
@@ -95,20 +73,6 @@ export default {
         </div>
       </div>
     </div>
-    <div class="bottom-about">
-      <h2 class="about-title">Photo Gallery</h2>
-      <br>
-      <Carousel
-        :autoplay="5000"
-        :pauseAutoplayOnHover="true"
-        :wrapAround="true"
-        :transition="800"
-      >
-        <Slide v-for="(pic, index) in carousel.image" :key="index">
-          <img :src="require(`../assets/${pic.url}`)" class="slide-pic">
-        </Slide>
-      </Carousel>
-    </div>
   </div>
 </template>
 
@@ -134,13 +98,6 @@ export default {
 }
 
 .about-title {
-  text-align: center;
-}
-
-.bottom-about {
-  width: 60vw;
-  height: 500px;
-  margin: 0 auto;
   text-align: center;
 }
 
