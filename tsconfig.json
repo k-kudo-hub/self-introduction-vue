@@ -17,7 +17,8 @@
     "noImplicitThis": false,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "vue",
+      // "webpack-env"
     ],
     "paths": {
       "@/*": [

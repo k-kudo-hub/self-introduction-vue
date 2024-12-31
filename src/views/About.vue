@@ -1,75 +1,84 @@
-<script lang="ts">
-export default {
-  data(){
-    return {
-      skills: {
-        front: [
-          { url: "logo.png" },
-          { url: "javascript-4.svg" },
-        ],
-        back: [
-          { url: "ruby.svg" },
-          { url: "rails-1.svg" },
-          { url: "python-5.svg" },
-          { url: "django.svg" },
-        ],
-        inf: [
-          { url: "docker.svg" },
-          { url: "circle-logo-stacked-black.png" },
-          { url: "mysql.svg" },
-          { url: "mariadb.svg" },
-        ],
-        other: [
-          { url: "github-icon-1.svg" },
-          { url: "slack-2.svg" },
-          { url: "trello.svg" },
-        ],
-      },
-    }
-  },
+<script lang="ts" setup>
+import vueLogo from '../assets/icons/logo.png';
+import javascriptLogo from '../assets/icons/javascript-4.svg';
+import rubyLogo from '../assets/icons/ruby.svg';
+import railsLogo from '../assets/icons/rails-1.svg';
+import pythonLogo from '../assets/icons/python-5.svg';
+import djangoLogo from '../assets/icons/django.svg';
+import dockerLogo from '../assets/icons/docker.svg';
+import circleLogo from '../assets/icons/circle-logo-stacked-black.png';
+import mysqlLogo from '../assets/icons/mysql.svg';
+import mariadbLogo from '../assets/icons/mariadb.svg';
+import githubLogo from '../assets/icons/github-icon-1.svg';
+import slackLogo from '../assets/icons/slack-2.svg';
+import trelloLogo from '../assets/icons/trello.svg';
+import { useCurrentAge } from '@/composables/useDateUtils';
+
+const skills = {
+  front: [
+    { url: vueLogo },
+    { url: javascriptLogo },
+  ],
+  back: [
+    { url: rubyLogo },
+    { url: railsLogo },
+    { url: pythonLogo },
+    { url: djangoLogo },
+  ],
+  inf: [
+    { url: dockerLogo },
+    { url: circleLogo },
+    { url: mysqlLogo },
+    { url: mariadbLogo },
+  ],
+  other: [
+    { url: githubLogo },
+    { url: slackLogo },
+    { url: trelloLogo },
+  ],
 };
+
+const age = useCurrentAge('1996-06-08');
 </script>
 
 <template>
   <div>
     <div class="upper-about about-block">
-      <div class="upper-text-area">  
+      <div class="upper-text-area">
         <h2 class="about-name over-pic">Kazuto Kudou</h2>
-        <p class="about-text over-pic">Age:24</p>
+        <p class="about-text over-pic">Age: {{ age }}</p>
         <p class="about-text over-pic">Profession:Engineer(IT)</p>
       </div>
     </div>
     <div class="middle-about about-block">
       <div class="middle-text-area">
         <h2 class="about-title">Career</h2>
-        <br>
-        <pre>1996   Born in Niigata Japan</pre>
-        <pre>2009   NST Boys and Girls Swimming Tournament 7th</pre>
-        <pre>2010   Niigata Middle Distance Swimming Championship 4th</pre>
-        <pre>2015   Graduated from Murakami Sakuragaoka High School</pre>
-        <pre>2019   Graduated from Niigata University of Health and Welfare</pre>
-        <pre>2020   Start programming...</pre>
+        <pre class="about-content">1996   Born in Niigata Japan</pre>
+        <pre class="about-content">2009   NST Boys and Girls Swimming Tournament 7th</pre>
+        <pre class="about-content">2010   Niigata Middle Distance Swimming Championship 4th</pre>
+        <pre class="about-content">2015   Graduated from Murakami Sakuragaoka High School</pre>
+        <pre class="about-content">2019   Graduated from Niigata University of Health and Welfare</pre>
+        <pre class="about-content">2020   Start programming...</pre>
       </div>
     </div>
     <div class="lower-about">
       <div class="lower-text-area">
         <h2 class="about-title">Programming Skill</h2>
-        <br>
         <h3>Frontend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.front" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.front" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>Backend</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.back" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.back" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>infrastructure・Database</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.inf" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.inf" :src="skill.url" :key="index" class="lang" />
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
-          <img v-for="(skill, index) in skills.other" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
+          <img v-for="(skill, index) in skills.other" :src="skill.url" :key="index" class="lang" />
         </div>
       </div>
     </div>
@@ -80,7 +89,10 @@ export default {
 
 .about-block {
   width: cover;
-  height: 400px;
+}
+
+.about-content {
+  white-space: pre-wrap;
 }
 
 .about-name {
@@ -99,6 +111,7 @@ export default {
 
 .about-title {
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .lower-about {
@@ -109,8 +122,8 @@ export default {
 .lower-text-area,
 .middle-text-area {
   margin: 0 auto;
-  width: 40%;
-  height: 80%;
+  width: 60%;
+  /* height: 80%; */
   padding-top :20px;
 }
 
@@ -143,6 +156,7 @@ export default {
 }
 
 .upper-about {
+  height: 40vh;
   background-color: #c7c7c7;
   background-image: url('../assets/images/kudo.jpeg');
   background-position: top center;
