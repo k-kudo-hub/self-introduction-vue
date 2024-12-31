@@ -7,7 +7,7 @@
         :imageName="sakuraImage"
       >
         <p>This is his photo gallery page.</p>
-        <p>It doesn't look good, but you can take a look if you like.</p>
+        <p>You can take a look if you like.</p>
       </TitleBoard>
     </section>
     <section class="content">

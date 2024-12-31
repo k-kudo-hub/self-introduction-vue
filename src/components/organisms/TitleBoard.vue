@@ -62,14 +62,13 @@ const backgroundImage = computed(() => props.imageName);
 }
 
 .title-board-mask {
+  display: grid;
+  place-items: center;
+  place-content: center;
   position: relative;
-  width: 100%;
-  height: calc(100% - 110px * 2);
+  height: 100%;
   background: rgba(0, 0, 0, 0.7);
   color: #ffff;
-  margin: auto;
-  text-align: center;
-  padding: 110px 0;
   z-index: 1;
 }
 

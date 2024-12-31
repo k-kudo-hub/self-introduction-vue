@@ -96,6 +96,7 @@ onBeforeUnmount(() => {
 }
 
 .lower-home {
+  overflow: hidden;
   background-image: url('../assets/images/caregiver.jpg');
   background-size: cover;
   background-position: center;
@@ -121,7 +122,8 @@ onBeforeUnmount(() => {
 
 .to-portfolio {
   background-color: rgba(255, 255, 255, 0.5);
-  border: none;
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 .to-portfolio:hover {

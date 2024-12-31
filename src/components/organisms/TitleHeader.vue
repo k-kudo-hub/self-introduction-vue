@@ -6,18 +6,18 @@
     </div>
     <div class="head-menu">
       <ul class="menu-bar">
-        <li class="menu-item">
-          <router-link to="/" active-class="link-active" exact class="menu-link"><i class="fas fa-home"></i> <span class="menu-title">Home</span></router-link>
-        </li>
-        <li class="menu-item">
-          <router-link to="/about" active-class="link-active" exact class="menu-link"><i class="fas fa-male"></i> <span class="menu-title">About</span></router-link>
-        </li>
-        <li class="menu-item">
-          <router-link to="/portfolio" active-class="link-active" exact class="menu-link"><i class="fas fa-briefcase"></i> <span class="menu-title">Portfolio</span></router-link>
-        </li>
-        <li class="menu-item">
-          <router-link to="/gallery" active-class="link-active" exact class="menu-link"><i class="fas fa-image"></i> <span class="menu-title">Gallery</span></router-link>
-        </li>
+        <router-link to="/" active-class="link-active" exact class="menu-link">
+          <li class="menu-item"><i class="fas fa-home"></i> <span class="menu-title">Home</span></li>
+        </router-link>
+        <router-link to="/about" active-class="link-active" exact class="menu-link">
+          <li class="menu-item"><i class="fas fa-male"></i> <span class="menu-title">About</span></li>
+        </router-link>
+        <router-link to="/portfolio" active-class="link-active" exact class="menu-link">
+          <li class="menu-item"><i class="fas fa-briefcase"></i> <span class="menu-title">Portfolio</span></li>
+        </router-link>
+        <router-link to="/gallery" active-class="link-active" exact class="menu-link">
+          <li class="menu-item"><i class="fas fa-image"></i> <span class="menu-title">Gallery</span></li>
+        </router-link>
       </ul>
     </div>
   </div>
