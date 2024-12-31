@@ -12,6 +12,7 @@ import mariadbLogo from '../assets/icons/mariadb.svg';
 import githubLogo from '../assets/icons/github-icon-1.svg';
 import slackLogo from '../assets/icons/slack-2.svg';
 import trelloLogo from '../assets/icons/trello.svg';
+import { useCurrentAge } from '@/composables/useDateUtils';
 
 const skills = {
   front: [
@@ -36,6 +37,8 @@ const skills = {
     { url: trelloLogo },
   ],
 };
+
+const age = useCurrentAge('1996-06-08');
 </script>
 
 <template>
@@ -43,7 +46,7 @@ const skills = {
     <div class="upper-about about-block">
       <div class="upper-text-area">
         <h2 class="about-name over-pic">Kazuto Kudou</h2>
-        <p class="about-text over-pic">Age:24</p>
+        <p class="about-text over-pic">Age: {{ age }}</p>
         <p class="about-text over-pic">Profession:Engineer(IT)</p>
       </div>
     </div>
