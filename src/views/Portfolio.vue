@@ -8,25 +8,23 @@
       </div>
     </div>
     <div class="pf-wrap">
-      <template v-for="app in pf">
-        <div class="pf-block" :key="app.title" :style="{'background-image': 'url(' + require(`../assets/${app.background}`) + ')'}">
-          <div class="pf-mask">
-            <h3 class="app-title">{{ app.title }}</h3>
-            <h4 class="app-sub">{{ app.sub_title }}</h4>
-            <div class="app-skills">
-              <img :src="require(`../assets/${app.langs.lang1}`)" class="app-skill">
-              <img :src="require(`../assets/${app.langs.lang2}`)" class="app-skill">
-            </div>
-            <p class="app-exp">{{ app.explanatioon }}</p>
-            <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
+      <div v-for="app in pf" class="pf-block" :key="app.title" :style="{'background-image': 'url(' + require(`../assets/images/${app.background}`) + ')'}">
+        <div class="pf-mask">
+          <h3 class="app-title">{{ app.title }}</h3>
+          <h4 class="app-sub">{{ app.sub_title }}</h4>
+          <div class="app-skills">
+            <img :src="require(`../assets/icons/${app.langs.lang1}`)" class="app-skill">
+            <img :src="require(`../assets/icons/${app.langs.lang2}`)" class="app-skill">
           </div>
+          <p class="app-exp">{{ app.explanation }}</p>
+          <a :href="app.link" class="app-link" target="_blank" rel="noopener noreferrer">See Github <i class="fas fa-external-link-alt"></i></a>
         </div>
-      </template>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data(){
     return {
@@ -35,7 +33,7 @@ export default {
           title: "Sup-App",
           sub_title: "- support caregiver -",
           background: 'caregiver.jpg',
-          explanatioon: "A portfolio with the theme of maximizing time with customers. It is an application that frees caregivers from 「long reports」 and 「recording on paper media」.",
+          explanation: "A portfolio with the theme of maximizing time with customers. It is an application that frees caregivers from 「long reports」 and 「recording on paper media」.",
           link: 'https://github.com/k-kudo-hub/sup_app',
           langs: {
             lang1: 'rails-1.svg',
@@ -46,7 +44,7 @@ export default {
           title: "Self-introduce-vue",
           sub_title: "- Welcome to my world. -",
           background: 'kudo.jpeg',
-          explanatioon: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
+          explanation: "A static page created for the purpose of learning Vue.js. It also includes a wealth of Material Design and CSS animation.",
           link: 'https://github.com/k-kudo-hub/self-introduction-vue',
           langs: {
             lang1: 'logo.png',
@@ -54,10 +52,10 @@ export default {
           }
         },
         com: {
-          title: "Comming soon...",
+          title: "Coming soon...",
           sub_title: "- We look forward to ! -",
-          background: 'shirine.jpg',
-          explanatioon: "stay tuned...",
+          background: 'shrine.jpg',
+          explanation: "stay tuned...",
           link: '',
           langs: {
             lang1: 'django.svg',
@@ -128,7 +126,7 @@ export default {
 .pf-label {
   width: cover;
   height: 400px;
-  background-image: url('../assets/sunset.jpg');
+  background-image: url('../assets/images/sunset.jpg');
   background-size: 100%;
   margin-bottom: 50px;
   background-position: bottom;

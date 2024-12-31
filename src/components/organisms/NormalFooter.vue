@@ -4,13 +4,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 </script>
 
 <style scoped>
 .footer {
   width: 100%;
   height: 50px;
-  background-color: #f05545;
+  background-color: #767bff;
 }
 </style>

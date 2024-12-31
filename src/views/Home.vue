@@ -1,10 +1,11 @@
 <template>
   <div class="home">
     <div class="upper-home">
+      <div class="upper-home-background"></div>
       <div class="upper-home-mask">
-        <h2>Welcome home!</h2>
+        <h2>Welcome!</h2>
         <p>This is his self-introduction page.</p>
-        <p>Do you Want to know him?</p>
+        <p>Do you want to know him?</p>
         <button @click="toAbout" class="button to-about">See About</button>
       </div>
     </div>
@@ -27,7 +28,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 
 export default {
   data(){
@@ -92,7 +93,7 @@ export default {
 }
 
 .lower-home {
-  background-image: url('../assets/caregiver.jpg');
+  background-image: url('../assets/images/caregiver.jpg');
   background-position: center;
   background-size: 100%;
 }
@@ -104,7 +105,8 @@ export default {
 }
 
 .middle-home {
-  background-color: #c7c7c7;
+  background-color: #363535;
+  color: #ffff;
   text-align: center;
 }
 
@@ -136,26 +138,35 @@ export default {
 }
 
 .upper-home {
-  height: 400px;
-  background-image: url('../assets/shirine.jpg');
-  background-position: bottom;
-  background-size: 100%;
-  transition-duration: 2s;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.upper-home:hover {
-  background-size: 120%;
-  transition-duration: 2s;
+.upper-home-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../assets/images/shrine.jpg') no-repeat center center/cover;
+  transition: transform 2s ease-in-out;
+  z-index: 0;
 }
 
 .upper-home-mask {
-  width: 100%;
-  height: 100%;
+  position: relative;
   background: rgba(0, 0, 0, 0.7);
   color: #ffff;
   margin: auto;
   text-align: center;
   padding: 110px 0;
+  z-index: 1;
+}
+
+.upper-home:hover .upper-home-background {
+  transform: scale(1.1);
+  transition-duration: 2s;
 }
 
 </style>

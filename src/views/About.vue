@@ -1,3 +1,35 @@
+<script lang="ts">
+export default {
+  data(){
+    return {
+      skills: {
+        front: [
+          { url: "logo.png" },
+          { url: "javascript-4.svg" },
+        ],
+        back: [
+          { url: "ruby.svg" },
+          { url: "rails-1.svg" },
+          { url: "python-5.svg" },
+          { url: "django.svg" },
+        ],
+        inf: [
+          { url: "docker.svg" },
+          { url: "circle-logo-stacked-black.png" },
+          { url: "mysql.svg" },
+          { url: "mariadb.svg" },
+        ],
+        other: [
+          { url: "github-icon-1.svg" },
+          { url: "slack-2.svg" },
+          { url: "trello.svg" },
+        ],
+      },
+    }
+  },
+};
+</script>
+
 <template>
   <div>
     <div class="upper-about about-block">
@@ -15,7 +47,7 @@
         <pre>2009   NST Boys and Girls Swimming Tournament 7th</pre>
         <pre>2010   Niigata Middle Distance Swimming Championship 4th</pre>
         <pre>2015   Graduated from Murakami Sakuragaoka High School</pre>
-        <pre>2019   Graduated from Niigata University of Helth and Welfare</pre>
+        <pre>2019   Graduated from Niigata University of Health and Welfare</pre>
         <pre>2020   Start programming...</pre>
       </div>
     </div>
@@ -23,112 +55,26 @@
       <div class="lower-text-area">
         <h2 class="about-title">Programming Skill</h2>
         <br>
-        <h3>Front-end</h3>
+        <h3>Frontend</h3>
         <div class="side-pic">
-          <template v-for="skill in skills.front"> 
-            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
-          </template>
+          <img v-for="(skill, index) in skills.front" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
-        <h3>Backｰend・Framework</h3>
+        <h3>Backend</h3>
         <div class="side-pic">
-          <template v-for="skill in skills.back"> 
-            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
-          </template>
+          <img v-for="(skill, index) in skills.back" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
         <h3>infrastructure・Database</h3>
         <div class="side-pic">
-          <template v-for="skill in skills.inf"> 
-            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
-          </template>
+          <img v-for="(skill, index) in skills.inf" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
         <h3>Other tools</h3>
         <div class="side-pic">
-          <template v-for="skill in skills.other"> 
-            <img :src="require(`../assets/${skill.url}`)" :key="skill.id" class="lang">
-          </template>
+          <img v-for="(skill, index) in skills.other" :src="require(`../assets/icons/${skill.url}`)" :key="index" class="lang" />
         </div>
       </div>
     </div>
-    <div class="bottom-about">
-      <h2 class="about-title">Photo Gallery</h2>
-      <br>
-      <carousel
-        :per-page=1
-        :autoplay="carousel.autoplay"
-        :autoplayTimeout="carousel.time"
-        :autoplayHoverPause="carousel.pause"
-        :navigation-enabled="true"
-        navigation-prev-label="〈"
-        navigation-next-label="〉"
-      >
-        <template v-for="pic in carousel.image">
-          <slide :key="pic.id">
-            <img :src="require(`../assets/${pic.url}`)" class="slide-pic">
-          </slide>
-        </template>
-      </carousel>
-    </div>
   </div>
 </template>
-
-<script>
-import { Carousel, Slide } from 'vue-carousel';
-
-export default {
-  data(){
-    return {
-      skills: {
-        front: [
-          { id: 1, url: "html5.svg" },
-          { id: 2, url: "css-5.svg" },
-          { id: 3, url: "javascript-4.svg" },
-          { id: 4, url: "logo.png" },
-        ],
-        back: [
-          { id: 1, url: "ruby.svg" },
-          { id: 2, url: "rails-1.svg" },
-          { id: 3, url: "python-5.svg" },
-          { id: 4, url: "django.svg" },
-        ],
-        inf: [
-          { id: 1, url: "docker.svg" },
-          { id: 2, url: "circle-logo-stacked-black.png" },
-          { id: 3, url: "mysql.svg" },
-          { id: 4, url: "mariadb.svg" },
-        ],
-        other: [
-          { id: 1, url: "github-icon-1.svg" },
-          { id: 2, url: "slack-2.svg" },
-          { id: 3, url: "trello.svg" },
-        ],
-      },
-      carousel: {
-        autoplay: true,
-        bool: true,
-        pause: true,
-        time: 5000,
-        image: [
-          { id: 1, url: "hanami.jpg" },
-          { id: 2, url: "sakura.jpg" },
-          { id: 3, url: "sunset.jpg" },
-          { id: 4, url: "beer.jpg" },
-          { id: 5, url: "floor.jpg" },
-          { id: 6, url: "fire.jpg" },
-          { id: 7, url: "aki.jpg" },
-          { id: 8, url: "ramen.jpg" },
-          { id: 9, url: "tokyo-dome.jpg" },
-          { id: 10, url: "ski.jpg" },          
-          { id: 11, url: "lift.jpg" }, 
-        ],
-      },
-    }
-  },
-  components: {
-    Carousel,
-    Slide
-  }
-};
-</script>
 
 <style scoped>
 
@@ -155,17 +101,9 @@ export default {
   text-align: center;
 }
 
-.bottom-about {
-  width: 60vw;
-  height: 500px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .lower-about {
   width: cover;
-  height: 850px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .lower-text-area,
@@ -194,8 +132,9 @@ export default {
 
 .side-pic {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .slide-pic {
@@ -205,7 +144,7 @@ export default {
 
 .upper-about {
   background-color: #c7c7c7;
-  background-image: url('../assets/kudo.jpeg');
+  background-image: url('../assets/images/kudo.jpeg');
   background-position: top center;
   background-size: 80%;
   background-repeat: no-repeat;

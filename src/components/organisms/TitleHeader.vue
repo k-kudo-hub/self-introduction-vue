@@ -18,14 +18,14 @@
           <router-link to="/portfolio" active-class="link-active" exact class="menu-link"><i class="fas fa-briefcase"></i> Portfolio</router-link>
         </li>
         <li class="menu-item">
-          <router-link to="/contact" active-class="link-active" exact class="menu-link"><i class="fas fa-comments"></i> Contact</router-link>
+          <router-link to="/gallery" active-class="link-active" exact class="menu-link"><i class="fas fa-image"></i> Gallery</router-link>
         </li>
       </ul>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts"> 
 export default {
   data(){
     return{
@@ -39,12 +39,12 @@ export default {
 .head-margin {
   width: 100%;
   height: 20px;
-  background-color: #710000;
+  background-color: #00002c;
 }
 
 .head-title {
   height: 100px;
-  background-color: #b71c1c;
+  background-color: #17009c;
   color: #ffffff;
 }
 
@@ -64,7 +64,8 @@ export default {
   list-style: none;
   padding: 0 20px;
   margin: 0 auto;
-  background-color: #f05545;
+  background-color: #767bff;
+  overflow-x: scroll;
 }
 
 .menu-item {
