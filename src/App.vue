@@ -28,6 +28,10 @@ export default {
 
 <style>
 
+* {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 .button {
   margin-top: 20px;
   padding: 1.5vh 2vw;
