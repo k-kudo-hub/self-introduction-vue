@@ -81,7 +81,7 @@ const age = useCurrentAge('1996-06-08');
       <div class="upper-text-area">
         <h2 class="about-name over-pic">Kazuto Kudou</h2>
         <p class="about-text over-pic">Age: {{ age }}</p>
-        <p class="about-text over-pic">Profession:Engineer(IT)</p>
+        <p class="about-text over-pic">Profession: SRE</p>
       </div>
     </div>
     <div class="middle-about about-block">
@@ -92,7 +92,6 @@ const age = useCurrentAge('1996-06-08');
         <pre class="about-content">2010  Niigata Middle Distance Swimming Championship 4th</pre>
         <pre class="about-content">2015  Graduated from Murakami Sakuragaoka High School</pre>
         <pre class="about-content">2019  Graduated from Niigata University of Health and Welfare</pre>
-        <pre class="about-content">2020  Start programming...</pre>
         <pre class="about-content">2021  Start software engineer career</pre>
         <pre class="about-content">2022  Join airCloset Inc.</pre>
         <pre class="about-content">2023  Turned to SRE.</pre>
